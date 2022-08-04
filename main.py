@@ -116,9 +116,23 @@ def viet_hoa(viethoachucaidau):
 
     print(result.strip())
 
+def dem_so():
+    myrn = "Nguyen Dang Gia Bach"
+    print(len(myrn))
+    tong_so = 0
+    for x in myrn:
+        if x == x:
+            tong_so = tong_so + 1
+        else:
+            return False
 
-str = "MillieB11"
-arr = list(str)
+    print((tong_so))
+
+
+
+
+str_ = "MillieB11"
+arr = list(str_)
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
@@ -130,8 +144,10 @@ if __name__ == '__main__':
     # datacheck(mylist)
     # mystring = "Gia Bach"
     # doi_ten(mystring)
-    sprigga = "Nguyen Dang Gia Bach"
+    #sprigga = "Nguyen Dang Gia Bach"
     #so_sanh_tu()
     #print(arr)
-    myname = "ha anh tuan"
-    viet_hoa(myname)
+    #myname = "ha anh tuan"
+    #viet_hoa(myname)
+    ten_cua_toi = "Nguyen Dang Gia bach"
+    dem_so()
