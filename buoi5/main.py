@@ -3,7 +3,10 @@
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.def so_le(x):
 
-# Press the green button in the gutter to run the script.
+# Press the green button in the gutter to run the script.\
+import math
+import os
+
 def kiem_tra_so_nguyen_to(motso):
     if motso == 1:
         return False
@@ -168,11 +171,13 @@ def myfuncx(sochan):
 
     print(tong)
 
+
 def kiem_tra_so_le(do):
     if not kiem_tra_so_chan(do):
         return True
     else:
         return False
+
 
 def calc_so_le(sole):
     tong = 0
@@ -182,6 +187,7 @@ def calc_so_le(sole):
 
     print(tong)
 
+
 def check_so_nguyen(son):
     x = type(son)
     if x == int:
@@ -189,18 +195,20 @@ def check_so_nguyen(son):
     else:
         return False
 
+
 def tinh_tong_nguyen(lso):
     tong = 0
     for y in lso:
-        if check_so_nguyen(y) and y % 3 ==0:
+        if check_so_nguyen(y) and y % 3 == 0:
             tong = tong + y
 
     print(tong)
 
+
 def calc_so_am(so):
     calc = 0
     for x in so:
-        if x > 0 :
+        if x > 0:
             calc = calc + 1
 
     print(calc)
@@ -208,11 +216,12 @@ def calc_so_am(so):
     caalc = 0
     for y in so:
         if y < 0:
-            caalc = caalc +1
+            caalc = caalc + 1
         else:
             print("khong co gia tri thoa man")
 
     print(caalc)
+
 
 def dem_so_chan_le(so):
     calc_so_chan = 0
@@ -224,15 +233,47 @@ def dem_so_chan_le(so):
     tong_so_le = 0
     for y in so:
         if kiem_tra_so_le(y):
-            tong_so_le = tong_so_le +1
+            tong_so_le = tong_so_le + 1
 
     print(tong_so_le)
+
 
 def goi_so_ngto(slo):
     for idx, x in enumerate(slo):
         if kiem_tra_so_nguyen_to(x):
             print(idx, x)
 
+def testfunc():
+    tong = 0
+    x = 10
+    try:
+        print()
+        print(x/ tong)
+    except (NameError, ZeroDivisionError):
+        print("Python Quiz")
+
+def tinh_phuong_trinh_bac_2():
+   try:
+       print("nhập số a:")
+       a = int(input())
+       print("nhập số b:")
+       b = int(input())
+       print("nhập số c:")
+       c = int(input())
+       delta = (b*b) - (4*a*c)
+       nghiem_1 = (-b - math.sqrt(delta)) / (2 * a)
+       nghiem_2 = (-b + math.sqrt(delta)) / (2 * a)
+       if delta > 0:
+           print(nghiem_1, nghiem_2)
+       else:
+           print("vô nghiệm")
+
+        if delta
+
+   except:
+       print("lỗi đã xảy ra")
+
+#nhập input
 
 if __name__ == '__main__':
     # my_array = [1,2,3,4,5,56,6,7,78,13,23,29]
@@ -254,10 +295,20 @@ if __name__ == '__main__':
     # kiem_tra_so_le_chia_3(day_so)
     # myfunc(day_so)
     # myfuncc(day_so)
-    #myfuncx(day_so)
-    #calc_so_le(day_so)
-    #tinh_tong_nguyen(day_so)
-    #calc_so_am(day_so)
-    #dem_so_chan_le(day_so)
-    goi_so_ngto(day_so)
-    #test(day_so)
+    # myfuncx(day_so)
+    # calc_so_le(day_so)
+    # tinh_tong_nguyen(day_so)
+    # calc_so_am(day_so)
+    # dem_so_chan_le(day_so)
+    # goi_so_ngto(day_so)
+    # test(day_so)
+    # try:
+    #     a = 5
+    #     b = 0
+    #     a / b
+    #     print("đã thử hiện a / b")
+    # except:
+    #     print("đã xảy ra lỗi")
+    #print(os.listdir())
+    #testfunc()
+    tinh_phuong_trinh_bac_2()
