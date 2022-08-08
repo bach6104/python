@@ -263,17 +263,19 @@ def tinh_phuong_trinh_bac_2():
        delta = (b*b) - (4*a*c)
        nghiem_1 = (-b - math.sqrt(delta)) / (2 * a)
        nghiem_2 = (-b + math.sqrt(delta)) / (2 * a)
+       nghiem_kep = -b / 2*a
        if delta > 0:
            print(nghiem_1, nghiem_2)
-       else:
-           print("vô nghiệm")
-
-        if delta
-
    except:
-       print("lỗi đã xảy ra")
+           print("phương trình vô nghiệm")
 
-#nhập input
+
+def tim_so_lon_nhat(dso):
+    print("Nhập chữ số của bạn:")
+    a = int(input())
+    X = max(a)
+    for idx, X in enumerate(dso):
+        print(X)
 
 if __name__ == '__main__':
     # my_array = [1,2,3,4,5,56,6,7,78,13,23,29]
