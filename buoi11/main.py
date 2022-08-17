@@ -34,9 +34,9 @@
 #     def print_time(self):
 #         time = '6h30'
 #         print(self.time)
-#(b) e chưa biết
-#4 code sẽ in ra giờ của boston vì chỉ có giờ boston được in ra còn paris thì không
-#kqua: code chạy ra giờ của paris
+# (b) e chưa biết
+# 4 code sẽ in ra giờ của boston vì chỉ có giờ boston được in ra còn paris thì không
+# kqua: code chạy ra giờ của paris
 
 #
 class Clock(object):
@@ -46,11 +46,45 @@ class Clock(object):
     def print_time(self):
         print(self.time)
 
+
 class Queue:
     def __init__(self, obj):
         self.obj = obj
+
     def get_obj(self):
         return self.obj
+
+
+class Spell(object):
+    def __init__(self, incantation, name):
+        self.name = name
+        self.incantation = incantation
+
+    def __str__(self):
+        return self.name + '' + self.incantation + '\n' + self.get_description()
+
+    def get_description(self):
+        return 'No description'
+
+    def execute(self):
+        print(self.incantation)
+
+
+class Accio(Spell):
+    def __init__(self):
+        Spell.__init__(self, 'Accio', 'Summoning Charm')
+
+
+class Confundo(Spell):
+    def __init__(self):
+        Spell.__init__(self, 'Confundo', 'Confundus Charm')
+
+    def get_description(self):
+        return 'Causes the victim to become confused and befuddled.'
+
+
+def study_spell(Spell):
+    print(Spell)
 
 
 if __name__ == '__main__':
@@ -58,7 +92,13 @@ if __name__ == '__main__':
     # clock.print_time()
     # clock = Clock('5: 30')
     # clock.print_time('10: 30')
-    boston_clock = Clock('5: 30')
-    paris_clock = boston_clock
-    paris_clock.time = "10: 30"
-    boston_clock.print_time()
+    # boston_clock = Clock('5: 30')
+    # paris_clock = boston_clock
+    # paris_clock.time = "10: 30"
+    # boston_clock.print_time()
+    spell = Accio()
+    spell.execute()
+    study_spell(spell)
+    study_spell(Confundo())
+    print(Accio)
+#get des của confundo được gọi ra khi nhập hàm study spell thì sẽ print nội dung get của confundo ra
