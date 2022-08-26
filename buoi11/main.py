@@ -86,7 +86,86 @@ class Confundo(Spell):
 def study_spell(Spell):
     print(Spell)
 
+# Radix sort in Python
 
+
+# Using counting sort to sort the elements in the basis of significant places
+def countingSort(array, place):
+    size = len(array)
+    output = [0] * size
+    count = [0] * 10
+
+    # Calculate count of elements
+    for i in range(0, size):
+        index = array[i] // place
+        count[index % 10] += 1
+
+    # Calculate cumulative count
+    for i in range(1, 10):
+        count[i] += count[i - 1]
+
+    # Place the elements in sorted order
+    i = size - 1
+    while i >= 0:
+        index = array[i] // place
+        output[count[index % 10] - 1] = array[i]
+        count[index % 10] -= 1
+        i -= 1
+
+    for i in range(0, size):
+        array[i] = output[i]
+
+
+# Main function to implement radix sort
+def radixSort(array):
+    # Get maximum element
+    max_element = max(array)
+
+    # Apply counting sort to sort elements based on place value.
+    place = 1
+    while max_element // place > 0:
+        countingSort(array, place)
+        place *= 10
+
+#  HERE
+# + SHE
+# -----
+# COMES
+
+C = 1
+while C <= 9:
+    E = 0
+    while E <= 9:
+        H = 0
+        while H <= 9:
+            M = 0
+            while M <= 9:
+                O = 0
+                while O <= 9:
+                    R = 0
+                    while R <= 9:
+                        S = 0
+                        while S <= 9:
+                            #print("CEHMORS:",C,E,H,M,O,R,S)
+                            if ((H*1000 + E*100 + R*10 + E) + (S*100 + H*10 + E) == C*10000 + O*1000 + M*100 + E*10 + S)\
+                               and C != E and C != H and C != M and C != O and C != R and C != S \
+                               and E != H and E != M and E != O and E != R and E != S \
+                               and H != M and H != O and H != R and H != S \
+                               and M != O and M != R and M != S \
+                               and O != R and O != S \
+                               and R != S:
+                                print("SOLUTION CEHMORS:",C,E,H,M,O,R,S)
+                                C,E,H,M,O,R,S = 10,10,10,10,10,10,10
+                            else:
+                                S += 1
+                        R += 1
+                    O += 1
+                M += 1
+            H += 1
+        E += 1
+    C += 1
+
+#saas , paas, iass
 if __name__ == '__main__':
     # clock = Clock('5:30')
     # clock.print_time()
@@ -102,3 +181,6 @@ if __name__ == '__main__':
     study_spell(Confundo())
     print(Accio)
 #get des của confundo được gọi ra khi nhập hàm study spell thì sẽ print nội dung get của confundo ra
+    data = [121, 432, 564, 23, 1, 45, 788]
+    radixSort(data)
+    print(data)
